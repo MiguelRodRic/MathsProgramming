@@ -144,13 +144,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Matrix3D.h" />
-    <ClInclude Include="stdafx.h" />
-    <ClInclude Include="targetver.h" />
     <ClInclude Include="Vector3D.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MathCodeExamples.cpp" />
-    <ClCompile Include="Vector3D.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

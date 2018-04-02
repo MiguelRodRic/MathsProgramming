@@ -15,12 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="Vector3D.h">
       <Filter>Archivos de origen</Filter>
     </ClInclude>
@@ -30,9 +24,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MathCodeExamples.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="Vector3D.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
