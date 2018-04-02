@@ -54,3 +54,11 @@ MathCodeExamples/MathCodeExamples/MathCodeExamples.vcxproj
 MathCodeExamples/MathCodeExamples/MathCodeExamples.vcxproj.filters
 MathCodeExamples/.vs/MathCodeExamples/v15/Browse.VC.db
 *.db
+
+MathCodeExamples/x64/*
+*.tlog
+*.tlog
+MathCodeExamples/MathCodeExamples/x64/Debug/MathCodeExamples.tlog/CL.read.1.tlog
+MathCodeExamples/MathCodeExamples/x64/Debug/MathCodeExamples.tlog/CL.write.1.tlog
+MathCodeExamples/MathCodeExamples/x64/Debug/MathCodeExamples.tlog/link.read.1.tlog
+MathCodeExamples/MathCodeExamples/x64/Debug/MathCodeExamples.tlog/link.write.1.tlog
