@@ -107,6 +107,8 @@ Matrix3D Inverse(const Matrix3D& M)
 		r2.x * invDet, r2.y * invDet, r2.z * invDet));
 }
 
+
+//Rotations around x, y and z axes
 Matrix3D MakeRotationX(float t) {
 	float c = cos(t);
 	float s = sin(t);
@@ -132,4 +134,24 @@ Matrix3D MakeRotationZ(float t) {
 	return (Matrix3D(c, -s, 0.f,
 		s, c, 0.f,
 		0.f, 0.f, 1.f));
+}
+
+
+//Rotation around an arbitrary axis a
+Matrix3D MakeRotation(float t, const Vector3D& a) {
+	float c = cos(t);
+	float s = sin(t);
+	float d = 1.f - c;
+
+	float x = a.x * d;
+	float y = a.y * d;
+	float z = a.z * d;
+
+	float axay = x * a.y;
+	float axaz = x * a.z;
+	float ayaz = y * a.z;
+
+	return (Matrix3D(c + x * a.x, axay - s * a.z, axaz + s * a.y,
+		axay + s * a.z, c + y * a.y, ayaz - s * a.x,
+		axaz - s * a.y, ayaz + s * a.x, c + z * a.z));
 }
