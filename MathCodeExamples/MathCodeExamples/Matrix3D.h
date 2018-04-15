@@ -89,3 +89,47 @@ float Determinant(const Matrix3D& M) {
 		M(0, 1) * (M(1, 2) * M(2, 0) - M(1, 0) * M(2, 2)) + 
 		M(0, 2) * (M(1, 0) * M(2, 1) - M(1, 1) * M(2, 0)));
 }
+
+Matrix3D Inverse(const Matrix3D& M)
+{
+	const Vector3D& a = M[0];
+	const Vector3D& b = M[1];
+	const Vector3D& c = M[2];
+
+	Vector3D r0 = Cross(b, c);
+	Vector3D r1 = Cross(c, a);
+	Vector3D r2 = Cross(a, b);
+
+	float invDet = 1.0f / Dot(r2, c);
+
+	return (Matrix3D(r0.x * invDet, r0.y * invDet, r0.z * invDet,
+		r1.x * invDet, r1.y * invDet, r1.z * invDet,
+		r2.x * invDet, r2.y * invDet, r2.z * invDet));
+}
+
+Matrix3D MakeRotationX(float t) {
+	float c = cos(t);
+	float s = sin(t);
+
+	return (Matrix3D(1.f, 0.f, 0.f,
+		0.f, c, -s, 
+		0.f, s, c));
+}
+
+Matrix3D MakeRotationY(float t) {
+	float c = cos(t);
+	float s = sin(t);
+
+	return (Matrix3D(c, 0.f, s,
+		0.f, 1.f, 0.f,
+		-s, 0, c));
+}
+
+Matrix3D MakeRotationZ(float t) {
+	float c = cos(t);
+	float s = sin(t);
+
+	return (Matrix3D(c, -s, 0.f,
+		s, c, 0.f,
+		0.f, 0.f, 1.f));
+}
