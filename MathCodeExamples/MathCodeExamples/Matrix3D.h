@@ -206,3 +206,17 @@ Matrix3D MakeScale(float s, const Vector3D& a)
 		axay, y * a.y + 1.f, ayaz,
 		axaz, ayaz, z * a.z + 1.f));
 }
+
+//Matrix that represents a skew by the angle t along the direction a
+//based on the projected length along the direction b
+Matrix3D MakeSkew(float t, const Vector3D& a, const Vector3D& b)
+{
+	t = tan(t);
+	float x = a.x * t;
+	float y = a.y * t;
+	float z = a.z * t;
+
+	return (Matrix3D(x * b.x + 1.f, x * b.y, x * b.z,
+		y * b.x, y * b.y + 1.f, y * b.z,
+		z * b.x, z * b.y, z * b.z + 1.f));
+}
