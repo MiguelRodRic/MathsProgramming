@@ -155,3 +155,32 @@ Matrix3D MakeRotation(float t, const Vector3D& a) {
 		axay + s * a.z, c + y * a.y, ayaz - s * a.x,
 		axaz - s * a.y, ayaz + s * a.x, c + z * a.z));
 }
+
+
+//Reflection through the plane perpendicular to an arbitrary vector
+Matrix3D MakeReflection(const Vector3D& a) {
+	float x = a.x * -2.f;
+	float y = a.y * -2.f;
+	float z = a.z * -2.f;
+	float axay = x * a.y;
+	float axaz = x * a.z;
+	float ayaz = y * a.z;
+
+	return (Matrix3D(x * a.x + 1.f, axay, axaz,
+		axay, y * a.y + 1.f, ayaz,
+		axaz, ayaz, z * a.z + 1.f));
+}
+
+//Involution through an arbitrary vector
+Matrix3D MakeInvolution(const Vector3D& a) {
+	float x = a.x * -2.f;
+	float y = a.y * -2.f;
+	float z = a.z * -2.f;
+	float axay = x * a.y;
+	float axaz = x * a.z;
+	float ayaz = y * a.z;
+
+	return (Matrix3D(x * a.x - 1.f, axay, axaz,
+		axay, y * a.y - 1.f, ayaz,
+		axaz, ayaz, z * a.z - 1.f));
+}
