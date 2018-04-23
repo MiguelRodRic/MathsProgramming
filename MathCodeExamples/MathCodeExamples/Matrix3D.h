@@ -173,9 +173,9 @@ Matrix3D MakeReflection(const Vector3D& a) {
 
 //Involution through an arbitrary vector
 Matrix3D MakeInvolution(const Vector3D& a) {
-	float x = a.x * -2.f;
-	float y = a.y * -2.f;
-	float z = a.z * -2.f;
+	float x = a.x * 2.f;
+	float y = a.y * 2.f;
+	float z = a.z * 2.f;
 	float axay = x * a.y;
 	float axaz = x * a.z;
 	float ayaz = y * a.z;
@@ -183,4 +183,26 @@ Matrix3D MakeInvolution(const Vector3D& a) {
 	return (Matrix3D(x * a.x - 1.f, axay, axaz,
 		axay, y * a.y - 1.f, ayaz,
 		axaz, ayaz, z * a.z - 1.f));
+}
+
+//Make new scale by s factors
+Matrix3D MakeScale(float sx, float sy, float sz)
+{
+	return (Matrix3D(sx, 0.f, 0.f, 0.f, sy, 0.f, 0.f, 0.f, sz));
+}
+
+//Make new scale by s factors along an arbitrary direction a
+Matrix3D MakeScale(float s, const Vector3D& a)
+{
+	s -= 1.f;
+	float x = a.x * s;
+	float y = a.y * s;
+	float z = a.z * s;
+	float axay = x * a.y;
+	float axaz = x * a.z;
+	float ayaz = y * a.z;
+
+	return (Matrix3D(x * a.x + 1.f, axay, axaz,
+		axay, y * a.y + 1.f, ayaz,
+		axaz, ayaz, z * a.z + 1.f));
 }
