@@ -146,6 +146,8 @@
     <ClInclude Include="Matrix3D.h" />
     <ClInclude Include="Matrix4D.h" />
     <ClInclude Include="Point3D.h" />
+    <ClInclude Include="Quaternion.h" />
+    <ClInclude Include="Transform4D.h" />
     <ClInclude Include="Vector3D.h" />
     <ClInclude Include="Vector4D.h" />
   </ItemGroup>

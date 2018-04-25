@@ -30,6 +30,12 @@
     <ClInclude Include="Matrix4D.h">
       <Filter>Archivos de origen</Filter>
     </ClInclude>
+    <ClInclude Include="Transform4D.h">
+      <Filter>Archivos de origen</Filter>
+    </ClInclude>
+    <ClInclude Include="Quaternion.h">
+      <Filter>Archivos de origen</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MathCodeExamples.cpp">
